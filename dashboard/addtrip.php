@@ -59,12 +59,12 @@ if(!isset($_SESSION['loggedUser']))
     <aside class="app-sidebar">
 
         <ul class="app-menu">
-            <li><a class="app-menu__item active" href="../index.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+            <li><a class="app-menu__item active" href="dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
 
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Trip Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="form-components.html"><i class="icon fa fa-circle-o"></i> Form Components</a></li>
-                    <li><a class="treeview-item" href="form-custom.html"><i class="icon fa fa-circle-o"></i> Custom Components</a></li>
+                    <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i> Add Trip</a></li>
+                    <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i> Search Trip</a></li>
 
                 </ul>
             </li>
@@ -90,9 +90,7 @@ if(!isset($_SESSION['loggedUser']))
                                 </div>
                                 <div class="form-group">
                                     Start date:
-                                    <input type="date" name="sdate"> 
-                                    
-                                    
+                                    <input type="date" name="sdate">
                                     End date:
                                     <input type="date" name="edate">
                                 </div>
