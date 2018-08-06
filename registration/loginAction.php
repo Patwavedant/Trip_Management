@@ -31,8 +31,8 @@ if($rows == 1)
 }
 else
 {
-    $message = "Something Went Wrong";
-    header('Location: ../index.php?Message='.$message); 
+    $message = "Please Enter Valid details";
+    header('Location: login.php?Message='.$message); 
 }
 
 

@@ -22,7 +22,7 @@ if(!isset($_SESSION['loggedUser']))
 
         <head>
 
-            <title>Dashboard</title>
+            <title>Search Trip</title>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,6 +30,7 @@ if(!isset($_SESSION['loggedUser']))
             <link rel="stylesheet" type="text/css" href="../css/main.css">
             <!-- Font-icon css-->
             <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         </head>
 
         <body class="app sidebar-mini rtl">
@@ -63,20 +64,64 @@ if(!isset($_SESSION['loggedUser']))
 
                     <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Trip Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a class="treeview-item" href="form-components.html"><i class="icon fa fa-circle-o"></i> Form Components</a></li>
-                            <li><a class="treeview-item" href="form-custom.html"><i class="icon fa fa-circle-o"></i> Custom Components</a></li>
-
+                            <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Trip</a></li>
+                            <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Trip</a></li>
                         </ul>
                     </li>
-                    <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                    <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Expense Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                         <ul class="treeview-menu">
-
-                            <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> Data Tables</a></li>
+                            <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
+                            <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
                         </ul>
                     </li>
                 </ul>
             </aside>
-            
+
+            <main class="app-content">
+                <div class="col-md-12">
+                    <div class="tile">
+                        <h3 class="tile-title">Responsive Table</h3>
+                        <div class="table-responsive">
+                            <table id="searchtrip" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Sr. No.</th>
+                                        <th>Trip Name</th>
+                                        <th>Trip Start Date</th>
+                                        <th>Trip End Date</th>
+                                        <th>Trip Image</th>
+                                        <th>Active/Deactivate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Fetch data from Db-->
+                                    <?php 
+                                        //$connection = mysqli_connect("localhost", "root", "", "trip"); or die("Error in Db");
+                                        include '../dbconnect.php';
+                                        $query = "select * from trip";
+                                        if ($result = mysqli_query($connection, $query)) {
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                echo "<tr>                     
+                                                        <td>" . $row['t_id']."</td>
+                                                        <td>" . $row['t_name']."</td>
+                                                        <td>".  $row['t_sdate']."</td>
+                                                        <td>" . $row['t_edate']."</td>
+                                                        <td>" . $row['t_image']."</td>
+                                                        <td>" . $row['t_isActive']."</td>                         
+                                                    </tr> "; 
+                                                }
+                                            }
+                                       }
+                 
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
             <!-- Essential javascripts for application to work-->
             <script src="../js/jquery-3.2.1.min.js"></script>
             <script src="../js/popper.min.js"></script>
@@ -86,8 +131,15 @@ if(!isset($_SESSION['loggedUser']))
             <script src="../js/plugins/pace.min.js"></script>
             <!-- Page specific javascripts-->
             <script type="text/javascript" src="../js/plugins/chart.js"></script>
-            
-            
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#searchtrip').DataTable();
+                });
+
+            </script>
+
         </body>
 
         </html>

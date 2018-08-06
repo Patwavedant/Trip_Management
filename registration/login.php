@@ -1,7 +1,8 @@
 <?php
+$message = '';
 if(isset($_REQUEST['Message']))
 {
-    echo $_REQUEST['Message'];
+    $message = $_REQUEST['Message'];
 }
 ?>
     <!DOCTYPE html>
@@ -27,24 +28,26 @@ if(isset($_REQUEST['Message']))
     </head>
 
     <body>
+   
         <div class="container-contact100">
-            <div class="wrap-contact100">
+            <div class="wrap-contact100">            
                 <form class="contact100-form validate-form" name="login" id="login" action="loginAction.php" method="post">
                     <span class="contact100-form-title">
                         Sign In
                     </span>
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="email" id="email" name="email" placeholder="Email" required>
+                        <input class="input100" type="email" id="email" name="email" placeholder="Email" >
                         <label class="label-input100" for="email">
                             <span class="lnr lnr-envelope"></span>
                         </label>
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Phone is required">
-                        <input class="input100" type="password" id="password" name="password" placeholder="Password" required>
+                        <input class="input100" type="password" id="password" name="password" placeholder="Password" >
                         <label class="label-input100" for="password">
                             <span class="lnr lnr-keyboard"></span>
                         </label>
                     </div>
+                    <div style="color: white"><?php echo $message; ?></div>
                     <div class="container-contact100-form-btn">
                         <div class="wrap-contact100-form-btn">
                             <div class="contact100-form-bgbtn"></div>
@@ -55,9 +58,11 @@ if(isset($_REQUEST['Message']))
                             <button type="button" name="home" id="home" onclick="window.location.href='../index.php'" class="contact100-form-btn">Home</button>
                         </div>
                     </div>
+                    
                 </form>
             </div>
         </div>
+        
         <div id="dropDownSelect1"></div>
 
         <script src="../js/jquery-3.2.1.min.js"></script>

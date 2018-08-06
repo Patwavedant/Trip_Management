@@ -63,17 +63,15 @@ if(!isset($_SESSION['loggedUser']))
 
                     <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Trip Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                         <ul class="treeview-menu">
+                           <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Trip</a></li>
                            <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Trip</a></li>
-                            <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Trip</a></li>
-                            
-
-                        </ul>
+                         </ul>
                     </li>
-                    <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-                        <ul class="treeview-menu">
-
-                            <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> Data Tables</a></li>
-                        </ul>
+                    <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Expense Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                         <ul class="treeview-menu">
+                           <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
+                           <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
+                         </ul>
                     </li>
                 </ul>
             </aside>
