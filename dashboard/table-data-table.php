@@ -1,3 +1,11 @@
+    <?php
+if(!isset($_SESSION['loggedUser'])) 
+{
+    header('Location:index.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
