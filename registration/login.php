@@ -47,7 +47,9 @@ if(isset($_REQUEST['Message']))
                             <span class="lnr lnr-keyboard"></span>
                         </label>
                     </div>
+                    
                     <div style="color: white"><?php echo $message; ?></div>
+                    
                     <div class="container-contact100-form-btn">
                         <div class="wrap-contact100-form-btn">
                             <div class="contact100-form-bgbtn"></div>

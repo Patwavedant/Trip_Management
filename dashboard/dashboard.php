@@ -91,7 +91,7 @@ if(!isset($_SESSION['loggedUser']))
                         <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                             <div class="info">
                                 <h4>Trips</h4>
-                                <p><b>5</b></p>
+                               
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@ if(!isset($_SESSION['loggedUser']))
                 <div class="row">
                     <div class="col-md-6">
                         <div class="tile">
-                            <h3 class="tile-title">Monthly Sales</h3>
+                            <h3 class="tile-title">Moonthly Progress</h3>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
                             </div>
@@ -124,7 +124,7 @@ if(!isset($_SESSION['loggedUser']))
                     </div>
                     <div class="col-md-6">
                         <div class="tile">
-                            <h3 class="tile-title">Support Requests</h3>
+                            <h3 class="tile-title">Project Completion</h3>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
                             </div>
@@ -144,7 +144,7 @@ if(!isset($_SESSION['loggedUser']))
             <script type="text/javascript" src="../js/plugins/chart.js"></script>
             <script type="text/javascript">
                 var data = {
-                    labels: ["January", "February", "March", "April", "May"],
+                    labels: ["June", "July", "August", "September", "August"],
                     datasets: [{
                             label: "My First dataset",
                             fillColor: "rgba(220,220,220,0.2)",
@@ -153,7 +153,7 @@ if(!isset($_SESSION['loggedUser']))
                             pointStrokeColor: "#fff",
                             pointHighlightFill: "#fff",
                             pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56]
+                            data: [15, 35, 55, 70, 85]
                         },
                         {
                             label: "My Second dataset",
@@ -168,13 +168,13 @@ if(!isset($_SESSION['loggedUser']))
                     ]
                 };
                 var pdata = [{
-                        value: 300,
+                        value: 65,
                         color: "#46BFBD",
                         highlight: "#5AD3D1",
                         label: "Complete"
                     },
                     {
-                        value: 50,
+                        value: 45,
                         color: "#F7464A",
                         highlight: "#FF5A5E",
                         label: "In-Progress"

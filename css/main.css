@@ -218,13 +218,11 @@ iframe {
     display: block;
     font-family: Oswald-Medium;
     font-size: 30px;
-    color: #43383e;
+    color: aliceblue;
     line-height: 1.2;
     text-align: left;
     padding-bottom: 35px;
 }
-
-
 
 /*------------------------------------------------------------------
 [ Input ]*/

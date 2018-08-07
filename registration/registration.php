@@ -30,32 +30,32 @@ if(isset($_REQUEST['Message']))
                     <span class="contact100-form-title">
                         Register
                     </span>
-                    <div class="wrap-input100 validate-input" data-validate="Name is required" required>
-                        <input class="input100" type="text" id="name" name="name" placeholder="Name">
+                    <div class="wrap-input100 validate-input" data-validate="Name is required" >
+                        <input class="input100" type="text" id="name" name="name" placeholder="Name" required>
                         <label class="label-input100" for="name">
                             <span class="lnr lnr-user"></span>
                         </label>
                     </div>
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" required>
-                        <input class="input100" type="email" id="email" name="email" placeholder="Email">
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="email" id="email" name="email" placeholder="Email" required>
                         <label class="label-input100" for="email">
                             <span class="lnr lnr-envelope"></span>
                         </label>
                     </div>
-                    <div class="wrap-input100 validate-input" data-validate="Phone is required" required>
-                        <input class="input100" type="tel" pattern="^\d{10}$" required id="mobile" name="mobile" placeholder="Phone">
+                    <div class="wrap-input100 validate-input" data-validate="Phone is required" >
+                        <input class="input100" type="tel" pattern="^\d{10}$" id="mobile" name="mobile" placeholder="Phone" required>
                         <label class="label-input100" for="phone">
                             <span class="lnr lnr-phone-handset"></span>
                         </label>
                     </div>
-                    <div class="wrap-input100 validate-input" data-validate="Phone is required" required>
-                        <input class="input100" type="password" pattern=".{6,}" title="Six or more characters" id="password" name="password" placeholder="Password">
+                    <div class="wrap-input100 validate-input" data-validate="Enter a password" >
+                        <input class="input100" type="password" pattern=".{6,}" title="Six or more characters" id="password" name="password" placeholder="Password" required>
                         <label class="label-input100" for="password">
                             <span class="lnr lnr-keyboard"></span>
                         </label>
                     </div>
-                    <div class="wrap-input100 validate-input" data-validate="Phone is required" required>
-                        <input class="input100" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                    <div class="wrap-input100 validate-input" data-validate="Enter a valid password" >
+                        <input class="input100" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
                         <label class="label-input100" for="confirmPassword">
                             <span class="lnr lnr-keyboard"></span>
                         </label>
