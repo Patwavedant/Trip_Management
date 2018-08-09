@@ -1,6 +1,6 @@
 <?php
 // keep this code everywhere after the login page // all pages//
-
+// start seesion
 if (!isset($_SESSION))
 {
     session_start();
@@ -69,12 +69,14 @@ if(!isset($_SESSION['loggedUser']))
             </li>
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Expense Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
-                    <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
+                   <li><a class="treeview-item" href="addexpense.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
+                    <li><a class="treeview-item" href="searchexpense.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
+
                 </ul>
             </li>
         </ul>
     </aside>
+
     <main class="app-content">
 
         <div class="row">
@@ -96,9 +98,9 @@ if(!isset($_SESSION['loggedUser']))
 
                                 <div class="form-group">
                                     <label for="exampleSelect2">Select Travellers</label>
-
+    
                                     <?php include('../dbconnect.php');
-
+                                    //fetching details from user table 
                                         $query="select U_id,U_name from user";
                                         
                                         $result=mysqli_query($connection, $query);

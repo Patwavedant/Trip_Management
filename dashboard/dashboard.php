@@ -12,8 +12,8 @@ $loggedUser = isset($_SESSION['loggedUser']) ? $_SESSION['loggedUser'] : array()
     <?php
 if(!isset($_SESSION['loggedUser'])) 
 {
-    header('Location:index.php');
-    exit;
+   header("location: http://localhost/Trip_Management/registration/login.php");
+   die;
 }
 ?>
 
@@ -49,7 +49,7 @@ if(!isset($_SESSION['loggedUser']))
                         <ul class="dropdown-menu settings-menu dropdown-menu-right">
                             <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
                             <li><a class="dropdown-item" href="myprofile.php"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="../registration/login.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                            <li><a class="dropdown-item" href="../registration/logout.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -69,8 +69,8 @@ if(!isset($_SESSION['loggedUser']))
                     </li>
                     <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Expense Manager</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                          <ul class="treeview-menu">
-                           <li><a class="treeview-item" href="addtrip.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
-                           <li><a class="treeview-item" href="searchtrip.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
+                           <li><a class="treeview-item" href="addexpense.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
+                           <li><a class="treeview-item" href="searchexpense.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
                          </ul>
                     </li>
                 </ul>

@@ -41,7 +41,7 @@ if(isset($_REQUEST['Message']))
                             <span class="lnr lnr-envelope"></span>
                         </label>
                     </div>
-                    <div class="wrap-input100 validate-input" data-validate="Phone is required">
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <input class="input100" type="password" id="password" name="password" placeholder="Password" >
                         <label class="label-input100" for="password">
                             <span class="lnr lnr-keyboard"></span>

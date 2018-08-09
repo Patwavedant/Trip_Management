@@ -1,7 +1,7 @@
 <?php
 // keep this code everywhere after the login page // all pages//
 
-if (!isset($_SESSION)) 
+if (!isset($_SESSION))
 {
     session_start();
 }
@@ -10,7 +10,7 @@ $loggedUser = isset($_SESSION['loggedUser']) ? $_SESSION['loggedUser'] : array()
 //exit();
 ?>
     <?php
-if(!isset($_SESSION['loggedUser'])) 
+if(!isset($_SESSION['loggedUser']))
 {
     header('Location:index.php');
     exit;
@@ -22,7 +22,7 @@ if(!isset($_SESSION['loggedUser']))
 
         <head>
 
-            <title>Search Trip</title>
+            <title>Add Expense</title>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,6 @@ if(!isset($_SESSION['loggedUser']))
             <link rel="stylesheet" type="text/css" href="../css/main.css">
             <!-- Font-icon css-->
             <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         </head>
 
         <body class="app sidebar-mini rtl">
@@ -76,51 +75,63 @@ if(!isset($_SESSION['loggedUser']))
                     </li>
                 </ul>
             </aside>
-
             <main class="app-content">
-                <div class="col-md-12">
-                    <div class="tile">
-                        <h3 class="tile-title">Responsive Table</h3>
-                        <div class="table-responsive">
-                            <table id="searchtrip" class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Sr. No.</th>
-                                        <th>Trip Name</th>
-                                        <th>Trip Start Date</th>
-                                        <th>Trip End Date</th>
-                                        <th>Trip Image</th>
-                                        <th>Active/Deactivate</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Fetch data from Db-->
-                                    <?php 
-                                        //$connection = mysqli_connect("localhost", "root", "", "trip"); or die("Error in Db");
-                                        include '../dbconnect.php';
-                                        $query = "select * from trip";
-                                        if ($result = mysqli_query($connection, $query)) {
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while ($row = mysqli_fetch_array($result)) {
-                                                echo "<tr>                     
-                                                        <td>" . $row['t_id']."</td>
-                                                        <td>" . $row['t_name']."</td>
-                                                        <td>".  $row['t_sdate']."</td>
-                                                        <td>" . $row['t_edate']."</td>
-                                                        <td>" . $row['t_image']."</td>
-                                                        <td>" . $row['t_isActive']."</td>                         
-                                                    </tr> "; 
-                                                }
-                                            }
-                                       }
-                 
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tile">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form action="addtripaction.php" method="post">
+                                        <div class="form-group">
+                                            <label for="trname">Expense Category</label>
+                                            <input type="text" class="form-control" name="trname" id="trname" placeholder="Enter trip name" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleSelect2">Select Expenses Category</label>
+
+                                            <?php include('../dbconnect.php');
+
+                                        $query="select e_c_id,e_c_name from e_category";
+                                        
+                                        $result=mysqli_query($connection, $query);
+                                        //$row=mysqli_fetch_array($result);
                                     ?>
-                                </tbody>
-                            </table>
+                                            <select id="framework" name="framework[]" multiple class="form-control">
+                                    
+                                      <?php                                            
+                                                while($row=mysqli_fetch_array($result))
+                                                {
+                                    ?>
+                                               <option value="<?php echo $row['e_c_id']; ?>"> <?php echo $row['e_c_name']; ?></option>           
+                                       <?php
+                                        
+                                            }
+                                        
+                                        ?>
+                                    
+                                     </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="trname">Expense Category</label>
+                                            <input type="text" class="form-control" name="trname" id="trname" placeholder="Enter category name" required>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input"  name="isActive" />Check</label>
+                                        </div>
+
+                                        <div class="tile-footer">
+                                            <button type="submit" class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </main>
             <!-- Essential javascripts for application to work-->
             <script src="../js/jquery-3.2.1.min.js"></script>
@@ -130,15 +141,6 @@ if(!isset($_SESSION['loggedUser']))
             <!-- The javascript plugin to display page loading on top-->
             <script src="../js/plugins/pace.min.js"></script>
             <!-- Page specific javascripts-->
-            <script type="text/javascript" src="../js/plugins/chart.js"></script>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#searchtrip').DataTable();
-                });
-
-            </script>
 
         </body>
 

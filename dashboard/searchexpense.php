@@ -22,7 +22,7 @@ if(!isset($_SESSION['loggedUser']))
 
         <head>
 
-            <title>Search Trip</title>
+            <title>Search Expense</title>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,6 +72,7 @@ if(!isset($_SESSION['loggedUser']))
                         <ul class="treeview-menu">
                             <li><a class="treeview-item" href="addexpense.php"><i class="icon fa fa-circle-o"></i>Add Expense</a></li>
                             <li><a class="treeview-item" href="searchexpense.php"><i class="icon fa fa-circle-o"></i>Search Expense</a></li>
+
                         </ul>
                     </li>
                 </ul>
