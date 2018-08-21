@@ -91,7 +91,23 @@ if(!isset($_SESSION['loggedUser']))
                         <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                             <div class="info">
                                 <h4>Trips</h4>
-                               
+                               <p><b>
+                                  <?php include ('../dbconnect.php');
+                                   
+                                   $query = "SELECT COUNT(t_id) AS total FROM trip";
+                                     
+                                   $result = mysqli_query($connection, $query);
+                                
+                                   //print_r ($result);
+                                   
+                                   $row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+                                   
+                                    $totaltrips = $row['total'];  
+                                   echo $totaltrips;
+                                   
+        
+                                   ?>
+                               </b></p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +115,8 @@ if(!isset($_SESSION['loggedUser']))
                     <div class="col-md-6 col-lg-3">
                         <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
                             <div class="info">
-                                <h4>Uploades</h4>
+                                <h4>Expenses</h4>
+                                
                                 <p><b>10</b></p>
                             </div>
                         </div>
@@ -107,8 +124,24 @@ if(!isset($_SESSION['loggedUser']))
                     <div class="col-md-6 col-lg-3">
                         <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
                             <div class="info">
-                                <h4>Stars</h4>
-                                <p><b>500</b></p>
+                                <h4>My Expense</h4>
+                                 <p><b>
+                                  <?php 
+                                   
+                                   $query = "SELECT COUNT(t_id) AS total FROM trip";
+                                     
+                                   $result = mysqli_query($connection, $query);
+                                
+                                   //print_r ($result);
+                                   
+                                   $row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+                                   
+                                    $totaltrips = $row['total'];  
+                                   echo $totaltrips;
+                                   
+        
+                                   ?>
+                               </b></p>
                             </div>
                         </div>
                     </div>

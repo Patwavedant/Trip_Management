@@ -108,7 +108,7 @@ if(!isset($_SESSION['loggedUser']))
                                                         <td>".  $row['t_sdate']."</td>
                                                         <td>" . $row['t_edate']."</td>
                                                         <td>" . $row['t_image']."</td>
-                                                        <td>" . $row['t_isActive']."</td>                         
+                                                        <td>" . $row['t_isActive']."</td>
                                                     </tr> "; 
                                                 }
                                             }
